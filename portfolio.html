@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chang, En-Yu's Profile</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +19,68 @@
             <li class="title">Chang, En-Yu's Profile</li>
             <li><a href="./index.html">履歷</a></li>
             <li><a href="#experience">經歷說明</a></li>
-            <li><a class="active"  href="./portfolio.html">作品集</a></li>
+            <li><a class="active" href="./portfolio.html">作品集</a></li>
             <li><a href="#files">檔案</a></li>
         </ul>
     </div>
+
+    <div class="container">
+        <h1>友達光電</h1>
+        <hr>
+        <div class="project" id="spiider-p">
+            <div class="project-img">
+                <img id="spiider-p-img" alt="SPIIDER-P" src="img/portfolio/spiider-p.png">
+            </div>
+            <div class="project-info">
+                <h2>SPIIDER-P With AI</h2>
+                <h4>於友達光電時將AI 導入產線，並開發相對應的程式及操作網頁</h4>
+                <p>將現有的SPIIDER-P 裝置做升級，加入AI 功能並製作相關操作網頁。可以取得機台運行的資料來進行精準
+                    的預測。</p>
+
+                <font color="#C6AC8F"><b>#Java #React #Linux #Docker #AI</b></font>
+            </div>
+        </div>
+
+
+
+
+        <button class="accordion"><b>more...</b></button>
+        <div class="panel">
+            <ul>
+                <li>SPIIDER-P 為友達光電的產品，主要功能是收集PLC的資料。</li>
+                <li>專案內容</li>
+                <li class="li-content">
+                    <ol style="padding-left: 2vw;">
+                        <li>將 <b>AI</b> 加入SPIIDER-P中，使得SPIIDER-P由資料收集器轉變成 <b>AIOT</b> 的裝置。</li>
+                        <li>在這個專案中還開發了一個 Web 提供使用者操作裝置，包含上更換模型、擷取資料、查看預測結果等。</li>
+                    </ol>
+                </li>
+                <li>實習期間內完成所有功能</li>
+                <li>取得友達光電Pre-offer</li>
+            </ul>
+
+            
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active-accordion");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 
 
 </body>

@@ -1,0 +1,42 @@
+/* accordion */
+.accordion {
+    background-color: #fdf3e8;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active-accordion,
+.accordion:hover {
+    background-color: #fcebd9;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+/* data */
+.project {
+    display: flex;
+}
+
+.project-img {
+    height: 20vh;
+    width: 20vh;
+    margin-right: 2vw;
+
+    object-fit: cover;
+}
+
+#spiider-p-img {
+    width: 20vh;
+    position: relative;
+    top: 3vh;
+}

@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: #0A0908;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.container {
+    padding: 3vh 5vw;
+}
+
+a {
+    color: #22333B;
+}
+
+/* navbar */
+.navbar .title {
+    margin-top: 1vh;
+    padding: 2vh;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C6AC8F;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    padding: 3vh;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: #c2bbb4;
+}
+
+.navbar .active {
+    background-color: #EAE0D5;
+}
+
+/* list */
+.li-content {
+    list-style-type: none;
+}

@@ -93,6 +93,7 @@ img.photo-sticker {
     padding: 2vh 1vw;
     display: flex;
     vertical-align: middle;
+    align-items: center;
 }
 
 #github-icon,
@@ -109,8 +110,16 @@ img.photo-sticker {
     color: rgb(170, 170, 170);
 }
 
-.education, .experience {
+.education, .experience, .certification, .skill {
     margin-left: 3vw;
+}
+
+.skill h3 {
+    margin: 0;
+}
+
+.skill ul {
+    margin-top: 0.5vh;
 }
 
 

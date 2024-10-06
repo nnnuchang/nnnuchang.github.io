@@ -1,10 +1,15 @@
 body {
     padding: 0;
     margin: 0;
+    color: #0A0908;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .container {
-    padding: 3vh 3vw;
+    padding: 3vh 5vw;
 }
 
 a {
@@ -34,7 +39,6 @@ a {
 .navbar li a {
     padding: 3vh;
     display: block;
-    color: #0A0908;
     text-align: center;
     text-decoration: none;
 }
@@ -49,16 +53,18 @@ a {
 
 /* table */
 td {
-    padding: 1vh 1vw;
+    padding: 0.5vh 0.5vw;
     font-size: 1.2rem;
 }
 
 /* data */
+/* info */
 img.photo-sticker {
     height: 25vh;
     width: 25vh;
+    padding-bottom: 15vh;
 
-    object-fit:cover;
+    object-fit: cover;
 }
 
 .my-name {
@@ -78,16 +84,33 @@ img.photo-sticker {
     vertical-align: middle;
 }
 
+.description {
+    padding: 5vh 1vw;
+}
+
 /* icon */
 .icon-title {
     padding: 2vh 1vw;
     display: flex;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
-#github-icon, #email-icon {
+#github-icon,
+#email-icon {
     height: 1.2rem;
     width: 1.2rem;
     margin-right: 1vw;
 }
+
+/* education */
+.date-range {
+    margin: 0;
+    padding: 0;
+    color: rgb(170, 170, 170);
+}
+
+.education, .experience {
+    margin-left: 3vw;
+}
+
 

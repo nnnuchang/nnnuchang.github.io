@@ -1,0 +1,93 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 3vh 3vw;
+}
+
+a {
+    color: #22333B;
+}
+
+/* navbar */
+.navbar .title {
+    margin-top: 1vh;
+    padding: 2vh;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C6AC8F;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    padding: 3vh;
+    display: block;
+    color: #0A0908;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: #c2bbb4;
+}
+
+.navbar .active {
+    background-color: #EAE0D5;
+}
+
+/* table */
+td {
+    padding: 1vh 1vw;
+    font-size: 1.2rem;
+}
+
+/* data */
+img.photo-sticker {
+    height: 25vh;
+    width: 25vh;
+
+    object-fit:cover;
+}
+
+.my-name {
+    padding: 1vh;
+    display: flex;
+    font-weight: bold;
+}
+
+.my-name .chinese-name {
+    font-size: 3rem;
+    margin-right: 1vw;
+}
+
+.my-name .english-name {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    vertical-align: middle;
+}
+
+/* icon */
+.icon-title {
+    padding: 2vh 1vw;
+    display: flex;
+    vertical-align:middle;
+}
+
+#github-icon, #email-icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 1vw;
+}
+

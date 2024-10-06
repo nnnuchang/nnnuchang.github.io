@@ -1,18 +1,20 @@
 /* accordion */
 .accordion {
-    background-color: #fdf3e8;
+    background-color: #EAE0D5;
     cursor: pointer;
-    padding: 18px;
+    margin-top: 1.5vh;
+    padding: 0.7vh 3vw;
     width: 100%;
     text-align: left;
     border: none;
+    border-radius: 3px;
     outline: none;
     transition: 0.4s;
 }
 
 .active-accordion,
 .accordion:hover {
-    background-color: #fcebd9;
+    background-color: #C6AC8F;
 }
 
 .panel {
@@ -28,15 +30,15 @@
 }
 
 .project-img {
-    height: 20vh;
-    width: 20vh;
+    height: 18vh;
+    width: 18vh;
     margin-right: 2vw;
 
     object-fit: cover;
 }
 
 #spiider-p-img {
-    width: 20vh;
+    width: 18vh;
     position: relative;
-    top: 3vh;
+    top: 2vh;
 }

@@ -37,8 +37,31 @@
     object-fit: cover;
 }
 
+.group-rei-phone-img {
+    height: 20vh;
+}
+
+.my-day-phone-img {
+    height:45vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+}
+
 #spiider-p-img {
     width: 18vh;
     position: relative;
     top: 2vh;
 }
+
+#group-rei-img {
+    width: 18vh;
+    position: relative;
+    top: 5vh;
+}
+
+#my-day-img {
+    width: 18vh;
+    position: relative;
+    top: 4.5vh;
+}
+

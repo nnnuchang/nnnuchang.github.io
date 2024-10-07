@@ -39,14 +39,19 @@ img.photo-sticker {
     align-items: end;
 }
 
-
 .description {
     padding: 5vh 1vw;
 }
 
+/* skill */
 .skill-left,
 .skill-right {
     width: 30vw;
+}
+
+/* certification */
+.certification-img {
+    width: 15vw;
 }
 
 /* icon */

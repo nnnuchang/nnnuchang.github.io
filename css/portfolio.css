@@ -22,6 +22,7 @@
     background-color: white;
     display: none;
     overflow: hidden;
+    margin-left: 1vw;
 }
 
 /* data */
@@ -41,8 +42,10 @@
     height: 20vh;
 }
 
-.my-day-phone-img {
-    height:45vh;
+.my-day-phone-img,
+.fun-eat-phone-img,
+.hot-source-phone-img {
+    height: 45vh;
     margin-right: 1vw;
     margin-top: 1vh;
 }
@@ -65,3 +68,23 @@
     top: 4.5vh;
 }
 
+#fun-eat-img,
+#birc-img {
+    height: 18vh;
+    position: relative;
+    left: 3vw;
+}
+
+#nasa-img {
+    width: 18vh;
+    padding: 1vh;
+    position: relative;
+    top: 6vh;
+}
+
+#guitar-img {
+    width: 18vh;
+    padding: 1vh;
+    position: relative;
+    top: 3vh;
+}

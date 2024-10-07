@@ -11,6 +11,9 @@ img.photo-sticker {
     width: 25vh;
     padding-bottom: 15vh;
 
+    position: absolute;
+    top: 25vh;
+    z-index: 1;
     object-fit: cover;
 }
 
@@ -31,8 +34,19 @@ img.photo-sticker {
     vertical-align: middle;
 }
 
+.info-title {
+    display: flex;
+    align-items: end;
+}
+
+
 .description {
     padding: 5vh 1vw;
+}
+
+.skill-left,
+.skill-right {
+    width: 30vw;
 }
 
 /* icon */
@@ -56,7 +70,11 @@ img.photo-sticker {
     color: rgb(170, 170, 170);
 }
 
-.education, .experience, .certification, .skill, .autobiography {
+.education,
+.experience,
+.certification,
+.skill,
+.autobiography {
     margin-left: 3vw;
 }
 
@@ -68,4 +86,39 @@ img.photo-sticker {
     margin-top: 0.5vh;
 }
 
+@media(max-width: 920px) {}
 
+@media(max-width: 768px) {
+    img.photo-sticker {
+        padding: 0;
+        position: relative;
+        top: 0;
+        left: calc((50%) - 12.5vh);
+    }
+
+    .photo-sticker-td {
+        display: none;
+    }
+
+    .my-name {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .info-title {
+        display: block;
+    }
+
+    .skill-left,
+    .skill-right {
+        width: 50vw;
+    }
+}
+
+@media(max-width: 540px) {
+    .my-name {
+        display: inline;
+        text-align: center;
+    }   
+}

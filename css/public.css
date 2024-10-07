@@ -55,3 +55,13 @@ a {
 .li-content {
     list-style-type: none;
 }
+
+@media(max-width: 920px) {}
+
+@media(max-width: 768px) {
+    .navbar li {
+        float: none;
+    }
+}
+
+@media(max-width: 540px) {}

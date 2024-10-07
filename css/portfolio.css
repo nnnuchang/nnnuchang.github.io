@@ -34,8 +34,6 @@
     height: 18vh;
     width: 18vh;
     margin-right: 2vw;
-
-    object-fit: cover;
 }
 
 .group-rei-phone-img {
@@ -65,25 +63,25 @@
 #my-day-img {
     width: 18vh;
     position: relative;
-    top: 4.5vh;
+    top: 5vh;
 }
 
 #fun-eat-img,
 #birc-img {
     height: 18vh;
+    padding: 0 6.5vh;
     position: relative;
-    left: 3vw;
 }
 
 #nasa-img {
-    width: 18vh;
+    width: 16vh;
     padding: 1vh;
     position: relative;
     top: 6vh;
 }
 
 #guitar-img {
-    width: 18vh;
+    width: 16vh;
     padding: 1vh;
     position: relative;
     top: 3vh;

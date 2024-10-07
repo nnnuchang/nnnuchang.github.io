@@ -2,3 +2,23 @@
     width: 44vw;
     height: 65vh;
 }
+
+.pdf-container {
+    display: flex;
+}
+
+@media(max-width: 920px) {
+    .pdf-file {
+        width: 80vw;
+        height: 65vh;
+        padding-left: 5vw;
+    }
+
+    .pdf-container {
+        display: inline;
+    }
+}
+
+@media(max-width: 768px) {}
+
+@media(max-width: 540px) {}

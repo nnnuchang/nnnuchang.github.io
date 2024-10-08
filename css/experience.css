@@ -1,0 +1,74 @@
+.content {
+    display: flex;
+}
+
+.word {
+    width: 40vw;
+    margin: 1vw;
+}
+
+#gantt {
+    width: 40vw;
+}
+
+.picture-area {
+    width: 45vw;
+}
+
+.picture-area#verticl {
+    display: flex;
+}
+
+.picture-verticl {
+    width: 22.5vw;
+    height: 30vw;
+    margin: 1vmin;
+    position: relative;
+}
+
+.picture-horizontal {
+    width: 20vw;
+    height: 15vw;
+    margin: 1vmin;
+}
+
+.competition, .club, tr, td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.competition td, .club td {
+    padding: 1vmin;
+}
+
+.competition, .club {
+    margin: 1vw;
+}
+
+@media(max-width: 920px) {
+    .content {
+        display: block;
+    }
+
+    .word {
+        width: 90vw;
+    }
+
+    #gantt {
+        width: 90vw;
+    }
+
+    .picture-area {
+        width: 90vw;
+        display: flex;
+    }
+
+    .picture {
+        width: 45vw;
+        height: 60vw;
+    }
+}
+
+@media(max-width: 768px) {}
+
+@media(max-width: 540px) {}

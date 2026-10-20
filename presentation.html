@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3f1eb">
+    <title>張恩瑀 | 簡報</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --paper: #f3f1eb;
+            --ink: #17201e;
+            --muted: #68716d;
+            --line: #d5d6cf;
+            --clay: #b99573;
+            --green: #537568;
+            --white: #fffefa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Noto Sans TC", sans-serif;
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+            text-underline-offset: 0.2em;
+        }
+
+        .deck {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+        }
+
+        .topbar {
+            position: fixed;
+            z-index: 10;
+            inset: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 0 4vw;
+            border-bottom: 1px solid rgb(23 32 30 / 10%);
+            background: rgb(243 241 235 / 94%);
+            backdrop-filter: blur(12px);
+        }
+
+        .wordmark {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .wordmark span:last-child {
+            color: var(--muted);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .top-count {
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+            font-size: 0.85rem;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: none;
+            grid-template-rows: 1fr;
+            align-items: center;
+            overflow: auto;
+            padding: 88px 8vw 92px;
+            background: var(--paper);
+        }
+
+        .slide.active {
+            display: grid;
+            animation: arrive 360ms ease both;
+        }
+
+        @keyframes arrive {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-inner {
+            width: min(100%, 1200px);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 1rem;
+            color: var(--green);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: 0;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            line-height: 1.12;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 2.6rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            margin-bottom: 0.55rem;
+            font-size: 1.2rem;
+        }
+
+        .lede {
+            max-width: 42rem;
+            color: var(--muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .cover {
+            grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+            gap: 5vw;
+            background: var(--paper);
+        }
+
+        .cover-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover h1 {
+            margin: 0;
+            font-size: 5rem;
+            line-height: 1.04;
+        }
+
+        .cover-name-en {
+            margin: 1.1rem 0 2rem;
+            color: var(--muted);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .role-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 2rem;
+        }
+
+        .role-line span {
+            padding: 0.55rem 0.8rem;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .cover-portrait {
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            min-height: 430px;
+            overflow: hidden;
+            background: #dce3df;
+        }
+
+        .cover-portrait::before {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 30%;
+            aspect-ratio: 1;
+            border: 1px solid rgb(23 32 30 / 20%);
+            content: "";
+        }
+
+        .cover-portrait img {
+            position: relative;
+            width: 82%;
+            max-height: 92%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-head h2 {
+            margin: 0;
+        }
+
+        .section-head p {
+            max-width: 26rem;
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1.5rem 2rem 0 0;
+        }
+
+        .timeline-item::before {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--clay);
+            content: "";
+        }
+
+        .timeline-date {
+            display: block;
+            margin-bottom: 1.3rem;
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .timeline-item p,
+        .timeline-item li {
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .timeline-item ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .focus-item {
+            min-height: 260px;
+            padding: 1.8rem 2rem 1.8rem 0;
+        }
+
+        .focus-item + .focus-item {
+            padding-left: 2rem;
+            border-left: 1px solid var(--line);
+        }
+
+        .focus-index {
+            display: block;
+            margin-bottom: 2.5rem;
+            color: var(--clay);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .focus-item p {
+            max-width: 23rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .techline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin-top: 2rem;
+            color: var(--green);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+            align-items: center;
+            gap: 5vw;
+        }
+
+        .project-visual {
+            display: grid;
+            place-items: center;
+            min-height: 320px;
+            padding: 2rem;
+            background: #e3e8e4;
+        }
+
+        .project-visual img {
+            display: block;
+            width: 100%;
+            max-height: 50vh;
+            object-fit: contain;
+        }
+
+        .project-points {
+            margin: 1.5rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .project-points li {
+            padding: 0.8rem 0;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .project-points strong {
+            color: var(--ink);
+        }
+
+        .system-flow {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .flow-step {
+            position: relative;
+            min-height: 145px;
+            padding: 1.2rem;
+            border-top: 3px solid var(--green);
+            background: var(--white);
+        }
+
+        .flow-step span {
+            display: block;
+            margin-bottom: 1.3rem;
+            color: var(--clay);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .flow-step p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .project-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 3rem;
+        }
+
+        .student-project {
+            display: grid;
+            grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1.3fr);
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .student-project img {
+            display: block;
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+        }
+
+        .student-project p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5vw;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.8rem 2.5rem;
+        }
+
+        .skill-group {
+            padding-top: 1rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .skill-group p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .education-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .education-row span {
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .close-slide {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .close-slide .eyebrow,
+        .close-slide .lede {
+            color: #b9c9bf;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-row a {
+            color: var(--paper);
+            font-size: 1rem;
+        }
+
+        .controls {
+            position: fixed;
+            z-index: 10;
+            inset: auto 0 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            height: 68px;
+            padding: 0 4vw;
+            border-top: 1px solid rgb(23 32 30 / 10%);
+            background: rgb(243 241 235 / 94%);
+            backdrop-filter: blur(12px);
+        }
+
+        .controls button {
+            display: inline-grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            background: transparent;
+            color: var(--ink);
+            font: inherit;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .controls button:hover:not(:disabled) {
+            background: #e5e4dc;
+        }
+
+        .controls button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .controls button:focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 2px;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 2px;
+            margin: 0 1rem;
+            background: var(--line);
+        }
+
+        .progress-value {
+            width: 12.5%;
+            height: 100%;
+            background: var(--green);
+            transition: width 220ms ease;
+        }
+
+        .control-count {
+            min-width: 3.5rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+        }
+
+        @media(max-width: 760px) {
+            .topbar {
+                height: 56px;
+                padding: 0 1rem;
+            }
+
+            .slide {
+                align-items: start;
+                padding: 78px 1.25rem 84px;
+            }
+
+            .cover,
+            .project-layout,
+            .skills-layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .cover {
+                gap: 1.5rem;
+            }
+
+            .cover h1 {
+                font-size: 3rem;
+            }
+
+            .cover-name-en {
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .cover-portrait {
+                min-height: 230px;
+                max-height: 32vh;
+            }
+
+            .cover-portrait img {
+                width: auto;
+                height: 100%;
+                max-width: 80%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .lede {
+                font-size: 1rem;
+            }
+
+            .section-head {
+                display: block;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-head p {
+                margin-top: 0.8rem;
+            }
+
+            .timeline,
+            .focus-grid,
+            .project-pair {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .timeline-item {
+                padding: 1rem 0 1rem 1rem;
+                border-left: 1px solid var(--line);
+            }
+
+            .timeline-item::before {
+                top: 1.3rem;
+                left: -5px;
+            }
+
+            .timeline-date {
+                margin-bottom: 0.5rem;
+            }
+
+            .focus-item,
+            .focus-item + .focus-item {
+                min-height: 0;
+                padding: 1.2rem 0;
+                border-left: 0;
+            }
+
+            .focus-index {
+                margin-bottom: 0.7rem;
+            }
+
+            .project-layout {
+                gap: 1.5rem;
+            }
+
+            .project-visual {
+                min-height: 180px;
+                padding: 1rem;
+            }
+
+            .system-flow {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .flow-step {
+                min-height: 0;
+            }
+
+            .flow-step span {
+                margin-bottom: 0.5rem;
+            }
+
+            .student-project {
+                grid-template-columns: 90px minmax(0, 1fr);
+                gap: 1rem;
+            }
+
+            .student-project img {
+                max-height: 140px;
+            }
+
+            .skill-list {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1rem;
+            }
+
+            .education-row {
+                display: block;
+            }
+
+            .education-row span {
+                display: block;
+                margin-top: 0.3rem;
+            }
+
+            .controls {
+                height: 60px;
+                gap: 0.5rem;
+                padding: 0 0.75rem;
+            }
+
+            .controls button {
+                width: 40px;
+                height: 40px;
+            }
+
+            .progress-track {
+                margin: 0 0.4rem;
+            }
+        }
+
+        @media(max-height: 650px) and (min-width: 761px) {
+            .slide {
+                padding-top: 76px;
+                padding-bottom: 78px;
+            }
+
+            .cover-portrait {
+                min-height: 300px;
+            }
+        }
+
+        @media(prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            body {
+                overflow: visible;
+                background: white;
+            }
+
+            .topbar,
+            .controls {
+                display: none !important;
+            }
+
+            .deck {
+                height: auto;
+                overflow: visible;
+            }
+
+            .slide,
+            .slide.active {
+                position: relative;
+                display: grid !important;
+                width: 100%;
+                height: 100vh;
+                page-break-after: always;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="wordmark"><span>CHANG, EN-YU</span><span>簡報模式</span></div>
+        <div class="top-count" aria-live="polite"><span id="top-current">01</span> / 08</div>
+    </header>
+
+    <main class="deck" aria-label="張恩瑀履歷簡報">
+        <section class="slide cover active" aria-label="封面">
+            <div class="cover-copy">
+                <p class="eyebrow">SOFTWARE ENGINEER · TAIWAN</p>
+                <h1>張恩瑀</h1>
+                <p class="cover-name-en">CHANG, EN-YU</p>
+                <p class="lede">以軟體開發與 AI 技術，改善工作流程並將想法落實到實際場域。</p>
+                <div class="role-line">
+                    <span>AI Agent</span>
+                    <span>Edge AI</span>
+                    <span>Automation</span>
+                </div>
+            </div>
+            <div class="cover-portrait">
+                <img src="img/photoSticker.png" alt="張恩瑀">
+            </div>
+        </section>
+
+        <section class="slide" aria-label="職涯與學歷">
+            <div class="slide-inner">
+                <p class="eyebrow">01 / CAREER</p>
+                <div class="section-head">
+                    <h2>從校園專案到產線應用</h2>
+                    <p>一路從跨平台應用、企業系統開發，走到 AI 與自動化專案。</p>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <span class="timeline-date">2019 — 2021</span>
+                        <h3>商業智慧研究中心</h3>
+                        <p>助理工程師<br>參與 Flutter、Java Spring 與網頁系統開發。</p>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-date">2024.02 — 2024.07</span>
+                        <h3>友達光電｜實習</h3>
+                        <p>投入 Edge AI 專案，完成裝置端程式與操作網頁，取得 Pre-offer。</p>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-date">2024.12 — 至今</span>
+                        <h3>友達光電｜工程師</h3>
+                        <p>參與 AI Agent、Edge AI、自動化程式與內部系統開發維護。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" aria-label="工作重點">
+            <div class="slide-inner">
+                <p class="eyebrow">02 / FOCUS</p>
+                <div class="section-head">
+                    <h2>讓技術接上工作現場</h2>
+                    <p>從流程需求出發，涵蓋資料取得、AI 應用與系統整合。</p>
+                </div>
+                <div class="focus-grid">
+                    <article class="focus-item">
+                        <span class="focus-index">01 · AI AGENT</span>
+                        <h3>內部流程改善</h3>
+                        <p>開發 AI Agent 與 AI 郵件處理系統，協助減少人工處理工作。</p>
+                    </article>
+                    <article class="focus-item">
+                        <span class="focus-index">02 · EDGE AI</span>
+                        <h3>模型導入產線</h3>
+                        <p>將 AI 模型導入設備與產線流程，支援生產預測並降低耗材損失。</p>
+                    </article>
+                    <article class="focus-item">
+                        <span class="focus-index">03 · AUTOMATION</span>
+                        <h3>系統與自動化</h3>
+                        <p>開發 ETL、伺服器監控與更新程式，並維護各類內部系統。</p>
+                    </article>
+                </div>
+                <div class="techline"><span>Java</span><span>Python</span><span>React</span><span>Node.js</span><span>MongoDB</span><span>SQLite</span><span>Langflow</span></div>
+            </div>
+        </section>
+
+        <section class="slide" aria-label="SPIIDER-P With AI 專案">
+            <div class="slide-inner project-layout">
+                <div class="project-visual">
+                    <img src="img/portfolio/spiider-p.png" alt="SPIIDER-P 裝置">
+                </div>
+                <div>
+                    <p class="eyebrow">03 / EDGE AI</p>
+                    <h2>SPIIDER-P<br>With AI</h2>
+                    <p class="lede">將資料收集裝置延伸為 AIoT 應用，讓機台資料能支援生產預測。</p>
+                    <ul class="project-points">
+                        <li><strong>裝置端</strong>　讓 AI 模型能在 SPIIDER-P 上運作</li>
+                        <li><strong>操作介面</strong>　開發網頁以更換模型、擷取資料與查看預測</li>
+                        <li><strong>技術</strong>　Java、React、Linux、Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" aria-label="企業系統與 AI 應用">
+            <div class="slide-inner">
+                <p class="eyebrow">04 / APPLIED AI</p>
+                <div class="section-head">
+                    <h2>把重複工作交給系統</h2>
+                    <p>依照不同使用情境，開發、導入並維護能落地的工具。</p>
+                </div>
+                <div class="system-flow">
+                    <article class="flow-step">
+                        <span>AI WORKFLOW</span>
+                        <h3>郵件處理</h3>
+                        <p>以 AI 協助處理公司內部郵件工作，降低人工處理時間。</p>
+                    </article>
+                    <article class="flow-step">
+                        <span>DATA PIPELINE</span>
+                        <h3>ETL 程式</h3>
+                        <p>開發資料擷取、轉換與載入流程，支援內部系統需求。</p>
+                    </article>
+                    <article class="flow-step">
+                        <span>OPERATIONS</span>
+                        <h3>維運自動化</h3>
+                        <p>製作伺服器監控、更新程式，並持續維護內部系統。</p>
+                    </article>
+                </div>
+                <div class="techline"><span>AI Agent</span><span>Copilot</span><span>Langflow</span><span>Python</span><span>Java</span><span>React</span></div>
+            </div>
+        </section>
+
+        <section class="slide" aria-label="校園專案">
+            <div class="slide-inner">
+                <p class="eyebrow">05 / SELECTED PROJECTS</p>
+                <div class="section-head">
+                    <h2>從需求到可操作的產品</h2>
+                    <p>在團隊專案中負責開發，也參與規劃與協作。</p>
+                </div>
+                <div class="project-pair">
+                    <article class="student-project">
+                        <img src="img/portfolio/myDay/logo.png" alt="My Day 我的天標誌">
+                        <div>
+                            <h3>My Day 我的天</h3>
+                            <p>跨平台學生行事曆。擔任組長，負責首頁、行程、後端功能與 AWS 架設；獲專題競賽第二名。</p>
+                            <div class="techline"><span>Flutter</span><span>Django</span><span>MySQL</span><span>AWS</span></div>
+                        </div>
+                    </article>
+                    <article class="student-project">
+                        <img src="img/portfolio/groupRei/logo.png" alt="○的誓約遊戲標誌">
+                        <div>
+                            <h3>○的誓約</h3>
+                            <p>結合音樂與 ARPG 的遊戲專題。擔任組長，負責後端、資料庫與遊戲企劃，並通過國科會大專學生研究計畫。</p>
+                            <div class="techline"><span>Unity</span><span>Flask</span><span>MongoDB</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" aria-label="技能與學歷">
+            <div class="slide-inner">
+                <p class="eyebrow">06 / TOOLKIT</p>
+                <div class="section-head">
+                    <h2>跨端開發與系統整合</h2>
+                    <p>依專案需求選擇技術，從介面、服務到資料與部署皆有實作經驗。</p>
+                </div>
+                <div class="skills-layout">
+                    <div class="skill-list">
+                        <div class="skill-group"><h3>AI 與自動化</h3><p>GitHub Copilot SDK<br>Langflow<br>Edge AI</p></div>
+                        <div class="skill-group"><h3>前端與行動</h3><p>HTML、CSS、JavaScript<br>React<br>Flutter、Android</p></div>
+                        <div class="skill-group"><h3>後端開發</h3><p>Java、Spring Boot<br>Python、Django、Flask<br>Node.js</p></div>
+                        <div class="skill-group"><h3>資料與部署</h3><p>MySQL、MongoDB、SQLite<br>AWS、Azure、Google Cloud<br>Linux、Docker</p></div>
+                    </div>
+                    <div>
+                        <h3>學歷</h3>
+                        <div class="education-list">
+                            <div class="education-row"><strong>國立雲林科技大學<br>資訊管理系｜學士</strong><span>2022 — 2024</span></div>
+                            <div class="education-row"><strong>國立臺北商業大學<br>資訊管理科｜副學士</strong><span>2017 — 2022</span></div>
+                        </div>
+                        <h3 style="margin-top: 2rem;">證照</h3>
+                        <p class="lede">AI-900 · TOEIC 530<br>MTA Python、Java、Security、Networking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide close-slide" aria-label="聯絡方式">
+            <div class="slide-inner">
+                <p class="eyebrow">07 / CONTACT</p>
+                <h2>謝謝聆聽</h2>
+                <p class="lede">期待一起把想法做成真正有用的工具。</p>
+                <div class="contact-row">
+                    <a href="mailto:nnnuchang@gmail.com">nnnuchang@gmail.com</a>
+                    <a href="https://github.com/nnnuchang" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/恩瑀-張-22a906216" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="controls" aria-label="簡報控制">
+        <button id="previous" type="button" aria-label="上一張" title="上一張">←</button>
+        <button id="next" type="button" aria-label="下一張" title="下一張">→</button>
+        <div class="progress-track" aria-hidden="true"><div class="progress-value" id="progress"></div></div>
+        <span class="control-count" id="control-count" aria-live="polite">01 / 08</span>
+        <button id="fullscreen" type="button" aria-label="切換全螢幕" title="切換全螢幕">⛶</button>
+    </nav>
+
+    <script>
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const previousButton = document.querySelector("#previous");
+        const nextButton = document.querySelector("#next");
+        const fullscreenButton = document.querySelector("#fullscreen");
+        const progress = document.querySelector("#progress");
+        const topCurrent = document.querySelector("#top-current");
+        const controlCount = document.querySelector("#control-count");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+            slides.forEach((slide, slideIndex) => {
+                const isActive = slideIndex === currentSlide;
+                slide.classList.toggle("active", isActive);
+                slide.setAttribute("aria-hidden", String(!isActive));
+                if (isActive) slide.scrollTop = 0;
+            });
+
+            const count = String(currentSlide + 1).padStart(2, "0");
+            topCurrent.textContent = count;
+            controlCount.textContent = `${count} / ${String(slides.length).padStart(2, "0")}`;
+            progress.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+            previousButton.disabled = currentSlide === 0;
+            nextButton.disabled = currentSlide === slides.length - 1;
+        }
+
+        previousButton.addEventListener("click", () => showSlide(currentSlide - 1));
+        nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+        fullscreenButton.addEventListener("click", async () => {
+            if (!document.fullscreenElement) {
+                await document.documentElement.requestFullscreen?.();
+            } else {
+                await document.exitFullscreen?.();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+                event.preventDefault();
+                showSlide(currentSlide + 1);
+            } else if (["ArrowLeft", "PageUp"].includes(event.key)) {
+                event.preventDefault();
+                showSlide(currentSlide - 1);
+            } else if (event.key === "Home") {
+                showSlide(0);
+            } else if (event.key === "End") {
+                showSlide(slides.length - 1);
+            } else if (event.key.toLowerCase() === "f") {
+                fullscreenButton.click();
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>

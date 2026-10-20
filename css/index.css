@@ -6,15 +6,50 @@ td {
 
 /* data */
 /* info */
-img.photo-sticker {
-    height: 25vh;
-    width: 25vh;
-    padding-bottom: 15vh;
+.profile-overview {
+    display: grid;
+    grid-template-columns: minmax(200px, 25%) minmax(0, 1fr);
+    gap: 1vw;
+    align-items: start;
+}
 
-    position: absolute;
-    top: 25vh;
-    z-index: 1;
+.profile-photo-column,
+.profile-info-column {
+    min-width: 0;
+}
+
+img.photo-sticker {
+    display: block;
+    width: min(100%, 30vh);
+
+    max-width: 30vh;
+    aspect-ratio: 1;
     object-fit: cover;
+    margin-inline: auto;
+    transform: translateY(12vh);
+}
+
+.profile-description {
+    padding: 1.5rem 0;
+}
+
+.my-info {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.profile-label-column {
+    width: 9rem;
+}
+
+.my-info .icon-title {
+    padding: 0.75rem;
+    white-space: nowrap;
+}
+
+.my-info .info-data {
+    padding: 0.75rem;
+    overflow-wrap: anywhere;
 }
 
 .my-name {
@@ -39,10 +74,6 @@ img.photo-sticker {
     align-items: end;
 }
 
-.description {
-    padding: 5vh 1vw;
-}
-
 /* skill */
 .skill-left,
 .skill-right {
@@ -54,6 +85,11 @@ img.photo-sticker {
     width: 15vw;
 }
 
+.certification-img-ai-900 {
+    width: auto;
+    height: 11.6vw;
+}
+
 /* icon */
 .icon-title {
     padding: 2vh 1vw;
@@ -62,17 +98,20 @@ img.photo-sticker {
     align-items: center;
 }
 
+#word-icon,
 #github-icon,
-#email-icon {
+#linkedin-icon,
+#email-icon{
     height: 1.2rem;
     width: 1.2rem;
-    margin-right: 1vw;
+    margin-right: 0.75rem;
 }
 
 .date-range {
     margin: 0;
     padding: 0;
-    color: rgb(170, 170, 170);
+    color: rgb(120, 120, 120);
+    font-weight: bold;
 }
 
 .education,
@@ -91,26 +130,25 @@ img.photo-sticker {
     margin-top: 0.5vh;
 }
 
-@media(max-width: 920px) {}
-
-@media(max-width: 768px) {
-    img.photo-sticker {
-        padding: 0;
-        position: relative;
-        top: 0;
-        left: calc((50%) - 12.5vh);
+@media(max-width: 920px) {
+    .profile-overview {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
     }
 
-    .photo-sticker-td {
-        display: none;
+    img.photo-sticker {
+        width: min(45vw, 220px);
+        max-width: 100%;
+        transform: none;
     }
 
     .my-name {
-        display: flex;
         justify-content: center;
         text-align: center;
     }
-    
+}
+
+@media(max-width: 768px) {
     .info-title {
         display: block;
     }

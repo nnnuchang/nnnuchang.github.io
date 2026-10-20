@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>Chang, En-Yu's Profile</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="navbar.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,90 +15,115 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li class="title">Chang, En-Yu's Profile</li>
+    <nav class="navbar">
+        <div class="navbar-header">
+            <div class="title">Chang, En-Yu's Profile</div>
+            <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+                <span class="navbar-toggle-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <ul id="site-navigation">
             <li><a class="active" href="./">履歷</a></li>
             <li><a href="./experience.html">經歷說明</a></li>
             <li><a href="./portfolio.html">作品集</a></li>
             <li><a href="./files.html">檔案</a></li>
         </ul>
-    </div>
+    </nav>
 
     <div class="container">
-        <img class="photo-sticker" alt="" src="img/photoSticker.png">
-        <table class="my-info">
-            <tbody>
-                <tr>
-                    <td class="photo-sticker-td" rowspan="5" style="width: 25vh;"></td>
-                    <td colspan="4" style="width: 75vh;">
-                        <div class="my-name">
-                            <div class="chinese-name">張恩瑀</div>
-                            <div class="english-name">CHANG, EN-YU</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-tab"></td>
-                    <td class="icon-title">
-                        <object id="email-icon" data="icon/mail.svg" type="image/svg+xml"></object>
-                        <div>E-mail</div>
-                    </td>
-                    <td class="info-data"><a href="mailto: nnnuchang@gmail.com">nnnuchang@gmail.com</a></td>
-                    <td class="info-tab"></td>
-                </tr>
-                <tr>
-                    <td class="info-tab"></td>
-                    <td class="icon-title">
-                        <img id="github-icon" alt="" src="icon/github-mark.png">
-                        <div>Github</div>
-                    </td>
-                    <td class="info-data"><a href="https://github.com/nnnuchang">https://github.com/nnnuchang</a></td>
-                    <td class="info-tab"></td>
-                </tr>
-                <tr>
-                    <td class="info-tab"></td>
-                    <td class="icon-title">
-                        <object id="home-pin-icon" data="icon/home-pin.svg" type="image/svg+xml"></object>
-                        <div>居住地</div>
-                    </td>
-                    <td class="info-data">新北市板橋區</td>
-                    <td class="info-tab"></td>
-                </tr>
-                <tr>
-                    <td class="description" colspan="6">
-                        <div>接觸資訊領域多年，有<strong>
-                                <font color="#C6AC8F">前端</font>
-                            </strong>、<strong>
-                                <font color="#C6AC8F">後端</font>
-                            </strong>、<strong>
-                                <font color="#C6AC8F">行動應用</font>
-                            </strong>、<strong>
-                                <font color="#C6AC8F">SQL和NO-SQL</font>
-                            </strong>等各種軟體開發經驗。</div>
-                        <ul>
-                            <li>畢業於 <strong>雲林科技大學 資訊管理系</strong></li>
-                            <li>曾在 <strong>友達光電</strong> 實習</li>
-                            <li>曾在 <strong>臺北商業大學 商業智慧研究中心</strong> 實際開發專案</li>
-                            <li>擅長技能包含Java、Python、Flutter、React、SQL、MongoDB 等</li>
-                        </ul>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
+        <div class="profile-overview">
+            <div class="profile-photo-column">
+                <img class="photo-sticker" alt="" src="img/photoSticker.png">
+            </div>
+            <div class="profile-info-column">
+                <table class="my-info">
+                    <colgroup>
+                        <col class="profile-label-column">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <div class="my-name">
+                                    <div class="chinese-name">張恩瑀</div>
+                                    <div class="english-name">CHANG, EN-YU</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="icon-title">
+                                <object id="word-icon" data="icon/work.svg" type="image/svg+xml"></object>
+                                <div>現職</div>
+                            </td>
+                            <td class="info-data">友達光電 工程師</td>
+                        </tr>
+                        <tr>
+                            <td class="icon-title">
+                                <object id="email-icon" data="icon/mail.svg" type="image/svg+xml"></object>
+                                <div>E-mail</div>
+                            </td>
+                            <td class="info-data"><a href="mailto: nnnuchang@gmail.com">nnnuchang@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                            <td class="icon-title">
+                                <img id="github-icon" alt="" src="icon/github-mark.png">
+                                <div>GitHub</div>
+                            </td>
+                            <td class="info-data"><a href="https://github.com/nnnuchang">https://github.com/nnnuchang</a></td>
+                        </tr>
+                        <tr>
+                            <td class="icon-title">
+                                <img id="linkedin-icon" alt="" src="icon/linkedin-icon.png">
+                                <div>LinkedIn</div>
+                            </td>
+                            <td class="info-data"><a
+                                    href="https://www.linkedin.com/in/恩瑀-張-22a906216">https://www.linkedin.com/in/恩瑀-張-22a906216</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="icon-title">
+                                <object id="home-pin-icon" data="icon/home-pin.svg" type="image/svg+xml"></object>
+                                <div>居住地</div>
+                            </td>
+                            <td class="info-data">新北市板橋區</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="profile-description">
+                    <div>接觸軟體開發領域多年，有<strong>
+                            <font color="#C6AC8F">AI Agent</font>
+                        </strong>、<strong>
+                            <font color="#C6AC8F">前端</font>
+                        </strong>、<strong>
+                            <font color="#C6AC8F">後端</font>
+                        </strong>、<strong>
+                            <font color="#C6AC8F">行動應用</font>
+                        </strong>、<strong>
+                            <font color="#C6AC8F">SQL</font>
+                        </strong>和<strong>
+                            <font color="#C6AC8F">NO-SQL</font>
+                        </strong>等各種經驗。</div>
+                    <ul>
+                        <li>目前為 <strong>友達光電 工程師</strong></li>
+                        <li>畢業於 <strong>雲林科技大學 資訊管理系</strong></li>
+                        <li>曾在 <strong>友達光電</strong> 實習</li>
+                        <li>曾在 <strong>臺北商業大學 商業智慧研究中心</strong> 實際開發專案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <h1>學歷</h1>
         <hr>
         <div class="education">
-            <p class="date-range">2022/9 ~ 2024/6</p>
+            <p class="date-range">2022/09 ~ 2024/06</p>
             <div class="info-title">
                 <h2 style="margin: 0.1vh;">國立雲林科技大學 &nbsp;</h2>
                 <h4 style="margin: 0.1vh;">資訊管理系 學士</h4>
             </div>
 
             <br>
-            <p class="date-range">2017/9 ~ 2022/6</p>
+            <p class="date-range">2017/09 ~ 2022/06</p>
             <div class="info-title">
                 <h2 style="margin: 0.1vh;">國立臺北商業大學 &nbsp;</h2>
                 <h4 style="margin: 0.1vh;">資訊管理科 副學士</h4>
@@ -108,35 +134,46 @@
         <h1>工作經驗</h1>
         <hr>
         <div class="experience">
-            <p class="date-range">2024/2 ~ 2024/7</p>
+            <p class="date-range">2024/12 ~ 至今</p>
+            <div class="info-title">
+                <h2 style="margin: 0.1vh;">友達光電股份有限公司 &nbsp;</h2>
+                <h4 style="margin: 0.1vh;">工程師</h4>
+            </div>
+            <ul>
+                <li>AI Agent開發及導入</li>
+                <li>自動化相關程式開發及維護</li>
+                <li>Edge AI 開發及導入</li>
+                <li>Java、Python、React等開發</li>
+            </ul>
+            <br>
+
+            <p class="date-range">2024/02 ~ 2024/07</p>
             <div class="info-title">
                 <h2 style="margin: 0.1vh;">友達光電股份有限公司 &nbsp;</h2>
                 <h4 style="margin: 0.1vh;">實習生</h4>
-
             </div>
-            <ul style="">
-                <li>CIM 部門、AI 導入相關經驗</li>
-                <li>開發Java 程式</li>
-                <li>開發React 網頁</li>
+            <ul>
+                <li>Edge AI 開發及導入</li>
+                <li>Java、React等開發</li>
                 <li>Linux 和Docker 環境操作</li>
             </ul>
             <br>
 
-            <p class="date-range">2019/9 ~ 2021/6</p>
+            <p class="date-range">2019/09 ~ 2021/06</p>
             <div class="info-title">
                 <h2 style="margin: 0.1vh;">國立臺北商業大學 商業智慧研究中心&nbsp;</h2>
                 <h4 style="margin: 0.1vh;">助理工程師</h4>
             </div>
             <ul>
-                <li>主要負責前端開發</li>
                 <li>Flutter 應用程式開發</li>
                 <li>Java Spring 後端</li>
+                <li>網頁開發</li>
                 <li>使用GitLab 版控</li>
 
             </ul>
             <br>
 
-            <p class="date-range">2020/8 ~ 2021/1</p>
+            <p class="date-range">2020/08 ~ 2021/01</p>
             <div class="info-title">
                 <h2 style="margin: 0.1vh;">蘋果芽數位科技股份有限公司&nbsp;</h2>
                 <h4 style="margin: 0.1vh;">助教</h4>
@@ -152,6 +189,7 @@
         <div class="certification">
             <ul>
                 <li><b>TOEIC 530</b></li>
+                <li><b>AI-900</b></li>
                 <li><b>Microsoft Technology Associate Introduction to Programming using Python</b></li>
                 <li><b>Microsoft Technology Associate Introduction to Programming using Java</b></li>
                 <li><b>Microsoft Technology Associate Security Fundamentals</b></li>
@@ -159,6 +197,7 @@
                 <li><b>電腦軟體應用丙級</b></li>
             </ul>
 
+            <img class="certification-img certification-img-ai-900" src="img/certification/AI-900.jpg" alt="AI-900">
             <img class="certification-img" src="img/certification/Introduction to Programming using Python.jpg"
                 alt="MTA Python">
             <img class="certification-img" src="img/certification/Introduction to Programming using Java.jpg"
@@ -172,6 +211,13 @@
         <hr>
         <div class="skill" style="display: flex;">
             <div class="skill-left">
+                <h3>AI相關經驗</h3>
+                <ul>
+                    <li>GitHub Copilot SDK</li>
+                    <li>GitHub Copilot Vibe coding</li>
+                    <li>Langflow</li>
+                </ul>
+
                 <h3>網頁設計</h3>
                 <ul>
                     <li>HTML, CSS, JavaScript</li>
@@ -180,7 +226,7 @@
 
                 <h3>後端開發</h3>
                 <ul>
-                    <li>Python: Django, flask</li>
+                    <li>Python: Django, Flask</li>
                     <li>Java: Spring Boot</li>
                 </ul>
 
@@ -198,12 +244,12 @@
             </div>
 
             <div class="skill-right">
-                <h3>網路設備及雲端部署</h3>
+                <h3>伺服器、網路設備及雲端部署</h3>
                 <ul>
                     <li>AWS</li>
                     <li>Azure</li>
                     <li>Google Cloud</li>
-                    <li>Windows Sever</li>
+                    <li>Windows Server</li>
                     <li>Cisco Internetworking Operating System</li>
                     <li>Linux</li>
                     <li>Apache HTTP Server</li>
@@ -219,7 +265,7 @@
                 <ul>
                     <li>Microsoft Office</li>
                     <li>Adobe Illustrator</li>
-                    <li>Adobe Affter Effect</li>
+                    <li>Adobe After Effects</li>
                     <li>Adobe XD</li>
                     <li>Auto CAD</li>
                 </ul>
@@ -231,19 +277,18 @@
         <hr>
         <div class="autobiography">
             <h3>一、求學過程</h3>
-            <p>&emsp;&emsp;從小我就對資訊相關的課程格外有興趣，曾在國中時參加課後的程式設計課程，接觸了我
-                的第一種程式語言C++。
-                後來五專選擇就讀資訊管理，我最喜歡的課程包含程式設計、資料庫、資料結構、資訊網
-                路等，也都在課堂上有不錯的表現。在課程中看到自己實作的成果讓我有滿滿的成就感，課餘
-                時間也會鑽研新知識。除此之外我還很熱衷於參加比賽，就算沒有得獎，也能與來自四面八方
-                的人合作，還能跟箇中高手較勁，不但可以從別人做事的方式中獲得經驗，也可以見識到來自
-                不同領域的觀點，例如在比賽中我接觸過: VTuber、共享經濟、資訊安全、糧食危機、熱浪等
-                議題。
-                二技之後更是希望能夠學習更多不同領域的內容，因此修了許多外系的課程，包含了角色
-                設計、遊戲企劃、影音特效等相關領域的課程，這些課程跟我的專題相輔相成，因為專題有需要而且我有興趣才會選修這些課程，也因為學校有這樣的資源才能使我的專題能夠進行。
+            <p>&emsp;&emsp;從小我就對資訊格外有興趣，也曾在國中時參加學校的課後活動接觸到了C++。基於興趣我後來便就讀了資訊管理，在校期間學習了程式設計、網路、系統分析等內容奠定了相當紮實的基礎，也對於資訊產業產生了更多的熱情。
             </p>
+            <br>
 
-            <h3>二、人格特質</h3>
+            <h3>二、工作經驗</h3>
+            <p>&emsp;&emsp;在校期間，我透過商業智慧研究中心接觸到了許多專案，也因此有了網頁開發、後端、資料庫還有各種資訊系統相關的概念及開發經驗。</p>
+            <p>&emsp;&emsp;後來實習進入友達光電的自動化單位，剛好因為AI技術的發展，讓公司開始導入AI，也因此而接觸到許多跟AI相關的工作內容。參與了Edge AI的專案，也開發了AI
+                Agent來協助改善公司內部的工作流程。</p>
+            <p>&emsp;&emsp;除了AI之外也需要開發及維護各種系統，也接觸了許多自動化相關的知識，透過Java、Python、JavaScript寫了不少程式。也接觸了Flutter、React等不同技術。</p>
+            <br>
+
+            <h3>三、人格特質</h3>
             <ul>
                 <li><b>樂於助人</b></li>
                 <li class="li-content">在學校會幫助其他課業上有困難的同學，時常會變成我開班授課的局面。</li>
@@ -253,11 +298,12 @@
                 <br>
                 <li><b>勇於嘗試、不放棄</b></li>
                 <li class="li-content">
-                    在製作五專畢業專題時，我們組有意開發跨平台行動應用，因此我們選擇使用Google的Flutter框架，當時評審們一致不看好我們，因為我們使用了他們陌生的技術且認為我們的開發量能不足，在三次的專題評鑑中前兩次我們都只獲得了倒數的名次，但是我和其他組員們並沒有放棄，靠著自學新知識完成了專題，並且獲得了專題競賽的第二名的成績。同時我也在「商業智慧研究中心」的專案中使用了相同的技術，證明這是可行的方案，希望我們不要受到舊有的想法所限制，也不要害怕失敗而不想嘗試。這學期聽其他留在臺北商業大學的同學們說系上開了Flutter相關的課程使我很欣慰，也感到相當有成就感，證明了我當時的想法沒有如評審們所想的那麼遭。
+                    五專專題時，團隊決定以 Flutter 開發。起初評審認為我們開發量能不足，我們透過堅定的信念和努力自學，最終獲得競賽第二名。這段經歷讓我學會面對質疑時努力不懈並精進自己的實力，並透過實踐來證明自己。
                 </li>
             </ul>
+            <br>
 
-            <h3>三、興趣及愛好</h3>
+            <h3>四、興趣及愛好</h3>
             <p>
                 我的興趣是關心科技的新鮮事，保持對世界的好奇讓我常常有很多不同的想法。除了科技之外對設計也有相當的興趣，喜歡畫畫和騎腳踏車。
             </p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>Chang, En-Yu's Profile</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/experience.css">
+    <script src="navbar.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,30 +15,50 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li class="title">Chang, En-Yu's Profile</li>
+    <nav class="navbar">
+        <div class="navbar-header">
+            <div class="title">Chang, En-Yu's Profile</div>
+            <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+                <span class="navbar-toggle-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <ul id="site-navigation">
             <li><a href="./">履歷</a></li>
             <li><a class="active" href="./experience.html">經歷說明</a></li>
             <li><a href="./portfolio.html">作品集</a></li>
             <li><a href="./files.html">檔案</a></li>
         </ul>
-    </div>
+    </nav>
 
     <div class="container">
-        <h1>友達光電</h1>
+        <h1>現職工作</h1>
+        <hr>
+        <div class="content">
+            <div>
+                <p>
+                    &emsp;&emsp;結束實習後我決定繼續留在友達光電，在這裡我延續原本的工作內容，將之前所開發的專案實際導入產線上使用，並針對製程以及產線的需求調整功能，讓將Edge AI導入產線的想法不再只是紙上談兵。
+                    <br><br>
+                    &emsp;&emsp;除此之外也參與了各種大大小小的專案，從維運到開發，也從更新程式到開啟全新的專案，所接觸到的工作包羅萬象。尤其是因應AI的浪潮，我們的工作時常需要接觸到各種AI及產業的新知識，也需要根據不同的使用者需求將AI導入他們的工作，讓工作流程可以更方便、順暢、智慧。
+                    <br><br>
+                </p>
+            </div>
+            
+        </div>
+
+        <h1>實習經驗</h1>
         <hr>
         <div class="content">
             <div class="word">
                 <p>
-                    &emsp;&emsp;學期間，我曾在友達光電學期實習，半年的實習雖然短暫，但是我完成了不少事情，也學習到了很多。在這段期間裡接觸到許多未曾接觸過的領域，從一開始對 CIM
+                    &emsp;&emsp;學期間，我曾在友達光電學期實習，半年的實習雖然短暫，但是完成了不少事情，也學習到很多。在這段期間裡接觸到許多未曾接觸過的領域，從一開始對 CIM
                     和面板的生產一無所知，到後來獨立完成整個專案，很難想像這是短短半年之內發生的事情。
-                    <br>
+                    <br><br>
                     &emsp;&emsp;我的工作內容是開發「SPIIDER-P With
                     AI」相關的程式，主要可分為兩大部分，一個是讓AI模型能夠在 SPIIDER-P 上運作的後端程式，另一個是代替裝置本身的螢幕作為使用者操作介面的網頁程式。「SPIIDER-P」
-                    是一款公司現有的產品，他能夠透過 PLC 來取得機台生產時的資料。加入人工智慧後的，透過 SPIIDER-P 從 PLC 獲取資料的功能可以針對生產進行預測，最終可將預測結果運用在產線上。
-                    <br>
+                    是一款公司現有的產品，他能夠透過 PLC 來取得機台生產時的資料。加入人工智慧後，透過 SPIIDER-P 從 PLC 獲取資料的功能可以針對生產進行預測，最終可將預測結果運用在產線上，有助於減少各種耗材的損失。
+                    <br><br>
                     &emsp;&emsp;經過了半年的努力，最終我也完成了專案的目標，也在實習生競賽的初賽中脫穎而出，進入了決賽，並且取得了Pre-offer。
+                    <br><br>
                 </p>
                 <img id="gantt" src="img/experience/auo gantt.png" alt="gantt">
             </div>
@@ -54,10 +75,10 @@
             <div class="word">
                 <p>
                     &emsp;&emsp;商業智慧研究中心是我最一開始接觸到完整的開發流程的地方，在這裡專案會進行各種類型的分工，包含: 前端、後端、行動應用、資料庫、UI/UX和網路等。
-                    <br>
+                    <br><br>
                     &emsp;&emsp;在這段期間我接觸了許多不同種類的專案，也參與了不同類型的合作。在專案的經驗中學習到了很多技術、框架、程式語言等各種類型的專業知識。例如: 透過 IOT
                     的專案學習到如何跟設備溝通，也在跟別人合作的過程中學習使用 Git，還有因為各種開發累積了對程式語言的了解。因為有了這些經驗也讓我在之後的專案上都有更好的能力去解決問題並完成工作。
-
+                    <br>
                 </p>
             </div>
             <div class="picture-area" id="horizontal">

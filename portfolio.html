@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>Chang, En-Yu's Profile</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/portfolio.css">
+    <script src="navbar.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +15,20 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li class="title">Chang, En-Yu's Profile</li>
+    <nav class="navbar">
+        <div class="navbar-header">
+            <div class="title">Chang, En-Yu's Profile</div>
+            <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+                <span class="navbar-toggle-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <ul id="site-navigation">
             <li><a href="./">履歷</a></li>
             <li><a href="./experience.html">經歷說明</a></li>
             <li><a class="active" href="./portfolio.html">作品集</a></li>
             <li><a href="./files.html">檔案</a></li>
         </ul>
-    </div>
+    </nav>
 
     <div class="container">
         <h1>友達光電</h1>
@@ -34,8 +40,7 @@
             <div class="project-info">
                 <h2>SPIIDER-P With AI</h2>
                 <h4>於友達光電時將AI 導入產線，並開發相對應的程式及操作網頁</h4>
-                <p>將現有的SPIIDER-P 裝置做升級，加入AI 功能並製作相關操作網頁。可以取得機台運行的資料來進行精準
-                    的預測。</p>
+                <p>將現有的SPIIDER-P 裝置做升級，加入AI 功能並製作相關操作網頁。可以取得機台運行的資料來進行精準的預測。</p>
 
                 <font color="#C6AC8F"><b>#Java #React #Linux #Docker #AI</b></font>
             </div>
@@ -49,7 +54,7 @@
                 <li class="li-content">
                     <ol style="padding-left: 2vw;">
                         <li>將 <b>AI</b> 加入SPIIDER-P中，使得SPIIDER-P由資料收集器轉變成 <b>AIOT</b> 的裝置。</li>
-                        <li>在這個專案中還開發了一個 Web 提供使用者操作裝置，包含上更換模型、擷取資料、查看預測結果等。</li>
+                        <li>在這個專案中還開發了一個 Web 提供使用者操作裝置，包含更換模型、擷取資料、查看預測結果等。</li>
                     </ol>
                 </li>
                 <li>主要負責內容</li>
@@ -61,6 +66,31 @@
                 <li>實習期間內完成所有功能</li>
                 <li>取得友達光電 <font color="#C6AC8F"><b>Pre-offer</b></font>
                 </li>
+            </ul>
+        </div>
+
+        <div class="project" style="margin-top: 5vh;">
+            <div class="project-img">
+                <img id="auo-img" src="img/portfolio/AUO.jpg" alt="AUO">
+            </div>
+            <div class="project-info">
+                <h2>其他公司內部系統</h2>
+                <h4>在職期間部分專案</h4>
+                <p>包含公司內部系統開發、維護、導入等</p>
+
+                <font color="#C6AC8F"><b>#React #Node.js #Java #Python #MongoDB #SQLite #Copilot #Langflow</b></font>
+            </div>
+        </div>
+        <button class="accordion"><b>more...</b></button>
+        <div class="panel">
+            <h2>詳細說明</h2>
+            <ul>
+                <li>各類ETL程式(資料擷取、轉換、載入)</li>
+                <li>AI郵件處理系統 降低人工處理時間</li>
+                <li>導入Edge AI降低耗材損失</li>
+                <li>伺服器監控程式</li>
+                <li>伺服器更新程式</li>
+                <li>各類內部系統維護及開發</li>
             </ul>
         </div>
 
@@ -76,13 +106,14 @@
                 <h4>一款結合音樂及ARPG的遊戲</h4>
                 <p>結合創新的想法製作出的遊戲。呈現出了市面上前所未見的玩法，以及精采的劇情和美術。</p>
 
-                <font color="#C6AC8F"><b>#Flask #Unity #MongoDB</b></font>
+                <font color="#C6AC8F"><b>#Flask #Unity #MongoDB #國科會大專學生研究計畫</b></font>
             </div>
         </div>
         <button class="accordion"><b>more...</b></button>
         <div class="panel">
             <h2>詳細說明</h2>
             <ul>
+                <li>通過<font color="#C6AC8F"> <b>國科會大專學生研究計畫</b></font>
                 <li>創新的遊戲玩法及劇情內容</li>
                 <li>專案內容</li>
                 <li class="li-content">
@@ -101,11 +132,10 @@
                     <li>資料庫建置</li>
                     <li>遊戲企劃</li>
                 </ul>
-                <li>通過<font color="#C6AC8F"> <b>國科會大專學生研究計畫</b></font>
             </ul>
 
             <h2>相關連結</h2>
-            <a href="https://github.com/nnnuchang/group-rei-backend">後端Github</a>
+            <a href="https://github.com/nnnuchang/group-rei-backend">後端GitHub</a>
             <br>
             <a href="https://nnnuchang.github.io/group-rei-api/">Api 文件</a>
 
@@ -135,13 +165,14 @@
                 <h4>專為學生設計的行事曆APP</h4>
                 <p>以學生的生活作息及需求為出發點，根據課表為時間軸，並結合社交相關功能來滿足學生的使用習慣。讓行事曆APP能夠更貼近生活。最重要的是這款APP可以支援跨平台，讓任何人都能體驗精彩的My Day。</p>
 
-                <font color="#C6AC8F"><b>#Flutter #Django #MySQL #AWS</b></font>
+                <font color="#C6AC8F"><b>#Flutter #Django #MySQL #AWS #專題競賽第二名</b></font>
             </div>
         </div>
         <button class="accordion"><b>more...</b></button>
         <div class="panel">
             <h2>詳細說明</h2>
             <ul>
+                <li>獲得<font color="#C6AC8F"> <b>專題競賽第二名</b></font>
                 <li>滿足學生各種需求</li>
                 <li>課表行事曆、群組、玩聚(聚會)、讀書計畫四大功能</li>
                 <li>專案內容</li>
@@ -161,13 +192,12 @@
                     <li>AWS操作及架設</li>
                     <li>資料庫設計</li>
                 </ul>
-                <li>獲得<font color="#C6AC8F"> <b>專題競賽第二名</b></font>
             </ul>
 
             <h2>相關連結</h2>
-            <a href="https://github.com/nnnuchang/My-Day-app">App Github</a>
+            <a href="https://github.com/nnnuchang/My-Day-app">App GitHub</a>
             <br>
-            <a href="https://github.com/nnnuchang/My-Day-back-end">後端 Github</a>
+            <a href="https://github.com/nnnuchang/My-Day-back-end">後端 GitHub</a>
             <br>
             <a href="https://github.com/nnnuchang/My-Day-api">API 文件</a>
 
@@ -236,9 +266,9 @@
             <div class="project-info">
                 <h2>BIRC簽到退系統</h2>
                 <h4>假勤相關的系統</h4>
-                <p>可以用於簽到退、請假等相關事務的系統，在手機板的APP上也可以用來開門。</p>
+                <p>可以用於簽到退、請假等相關事務的系統，在手機版的APP上也可以用來開門。</p>
 
-                <font color="#C6AC8F"><b>#HTML #CSS #JavaScrit #AJAX #MySQL #Java Spring</b></font>
+                <font color="#C6AC8F"><b>#HTML #CSS #JavaScript #AJAX #MySQL #Java Spring</b></font>
             </div>
         </div>
         <button class="accordion"><b>more...</b></button>
@@ -272,7 +302,9 @@
         <hr>
         <div class="project">
             <div class="project-img">
-                <img id="nasa-img" src="https://images.spaceappschallenge.org/images/tBloUSwnTqJFpGa_Jt5kHaukBNU=/9879/width-352/" alt="Hot Source" style="background-color: #0042a6;">
+                <img id="nasa-img"
+                    src="https://2021.spaceappschallenge.org/assets/team-photos/zWjG-3Inw2GhY7UgrWUdICJkMEw=/24549/fill-591x300.jpeg"
+                    alt="Hot Source" style="background-color: #0042a6;">
             </div>
             <div class="project-info">
                 <h2>Hot Source</h2>
@@ -300,13 +332,13 @@
             </ul>
 
             <h2>相關連結</h2>
-            <a href="https://github.com/nnnuchang/hot_Source_app">App Github</a>
+            <a href="https://github.com/nnnuchang/hot_Source_app">App GitHub</a>
             <br>
             <a
-                href="https://2021.spaceappschallenge.org/challenges/statements/warning-things-are-heating-up/teams/were-so-hot/projecthttps://github.com/nnnuchang/My-Day-back-end">比賽網頁</a>
+                href="https://2021.spaceappschallenge.org/challenges/statements/warning-things-are-heating-up/teams/were-so-hot/project/">比賽網頁</a>
 
             <h2>圖片和影片</h2>
-            <iframe width="373vh" height="210vh" src="https://www.youtube.com/embed/nbjXUcRp6Uo?si=A59XYunhME77reHu"
+            <iframe width="373vh" height="210vh" src="https://www.youtube.com/embed/nbjXUcRp6Uo?si=dO2BD8OUTW8MPWrf"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -325,7 +357,7 @@
             </div>
             <div class="project-info">
                 <h2>Guitar Chord</h2>
-                <h4>用於新手教學及他指法</h4>
+                <h4>用於新手教學吉他指法</h4>
                 <p>2018年時自己練習製作的APP，有預設的指法檔案，也可以自己新增指法。</p>
 
                 <font color="#C6AC8F"><b>#C Sharp</b></font>
@@ -346,9 +378,9 @@
             </ul>
 
             <h2>相關連結</h2>
-            <a href="https://github.com/nnnuchang/guitar">Github</a>
+            <a href="https://github.com/nnnuchang/guitar">GitHub</a>
             <br>
-            
+
             <h2>圖片</h2>
 
             <div>

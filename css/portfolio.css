@@ -48,18 +48,19 @@
     margin-top: 1vh;
 }
 
+#auo-img {
+    width: 15vh;
+    position: relative;
+    left: 2vh;
+}
+
 #spiider-p-img {
     width: 18vh;
     position: relative;
     top: 2vh;
 }
 
-#group-rei-img {
-    width: 18vh;
-    position: relative;
-    top: 5vh;
-}
-
+#group-rei-img,
 #my-day-img {
     width: 18vh;
     position: relative;

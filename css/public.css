@@ -22,6 +22,9 @@ li:not(.navbar li) {
 
 /* navbar */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     align-items: stretch;
     background-color: #C6AC8F;

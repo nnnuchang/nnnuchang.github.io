@@ -51,7 +51,7 @@
 #auo-img {
     width: 15vh;
     position: relative;
-    left: 2vh;
+    margin: 1vh;
 }
 
 #spiider-p-img {
@@ -86,4 +86,20 @@
     padding: 1vh;
     position: relative;
     top: 3vh;
+}
+
+@media(max-width: 768px) {
+    .panel .portfolio-landscape {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    .panel iframe {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
 }

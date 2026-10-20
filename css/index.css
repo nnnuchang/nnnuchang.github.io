@@ -153,6 +153,37 @@ img.photo-sticker {
         display: block;
     }
 
+    .profile-label-column {
+        width: 7.5rem;
+    }
+
+    .my-info .icon-title,
+    .my-info .info-data {
+        padding: 0.5rem;
+    }
+
+    .my-info .info-data a {
+        font-size: 0.9rem;
+    }
+
+    .certification {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .certification ul {
+        grid-column: 1 / -1;
+    }
+
+    .certification-img,
+    .certification-img-ai-900 {
+        width: 100%;
+        height: auto;
+        align-self: start;
+        object-fit: contain;
+    }
+
     .skill-left,
     .skill-right {
         width: 50vw;
